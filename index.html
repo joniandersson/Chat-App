@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create room</title>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+
+<form action="" id="roomcreationform">
+    <input type="text" name="roomname" id="inputroomname">
+    <input type="submit" value="Create Room">
+</form>
+
+<button id="dick" value="dick">dick</button>
+
+<script>
+  $(function () {
+    var socket = io();
+    $('#roomcreationform').submit(function() {
+        console.log('Joined room');
+        socket.emit('join', $('#inputroomname').val());
+        return false;
+    });
+    $('#dick').click(function () {
+        console.log(room);
+    });
+  });
+</script>
+</body>
+</html>
